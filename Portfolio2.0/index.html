@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frolov Oleksandr | Web design</title>
+  <title>Frolov Oleksandr | Web Design</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       background-color: #0e0e0e;
-      color: white;
+      color: #f2f2f2;
       font-family: 'Space Grotesk', sans-serif;
       scroll-behavior: smooth;
       overflow-x: hidden;
@@ -22,7 +20,7 @@
     }
 
     body.light {
-      background-color: #f0f0f0;
+      background-color: #f9f9f9;
       color: #111;
     }
 
@@ -41,7 +39,7 @@
     }
 
     body.light nav {
-      background-color: rgba(255,255,255,0.8);
+      background-color: #f2f2f2;
     }
 
     nav a {
@@ -53,17 +51,11 @@
       transition: color 0.3s;
     }
 
-    body.light nav a {
-      color: #666;
-    }
+    body.light nav a { color: #555; }
 
-    nav a:hover {
-      color: white;
-    }
+    nav a:hover { color: white; }
 
-    body.light nav a:hover {
-      color: #000;
-    }
+    body.light nav a:hover { color: #000; }
 
     .toggle-theme {
       margin-left: 20px;
@@ -93,6 +85,10 @@
       position: relative;
     }
 
+    body.light header {
+      background: url('https://cdn.pixabay.com/photo/2016/11/29/09/32/beach-1867285_1280.jpg') no-repeat center center/cover;
+    }
+
     header::after {
       content: '';
       position: absolute;
@@ -101,6 +97,10 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    body.light header::after {
+      background-color: rgba(255, 255, 255, 0.6);
     }
 
     header h1, header p {
@@ -122,27 +122,7 @@
     }
 
     body.light header p {
-      color: #e0e0e0;
-    }
-
-    .resume-button {
-      margin-top: 30px;
-      background-color: #66c3ff;
-      color: #000;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      z-index: 1;
-      transition: all 0.3s;
-      text-decoration: none;
-    }
-
-    .resume-button:hover {
-      background-color: #4ab3ff;
-      transform: translateY(-2px);
+      color: #444;
     }
 
     section {
@@ -162,7 +142,7 @@
     body.light .about, 
     body.light .projects, 
     body.light .contact {
-      background-color: #fff;
+      background-color: #f2f2f2c8;
     }
 
     .projects {
@@ -170,7 +150,7 @@
     }
 
     body.light .projects {
-      background-color: #f5f5f5;
+      background-color: #f2f2f2;
     }
 
     h2 {
@@ -205,16 +185,6 @@
       color: #333;
     }
 
-    a {
-      color: #66c3ff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    a:hover {
-      color: #4ab3ff;
-    }
-
     .about-content {
       display: flex;
       align-items: center;
@@ -223,22 +193,7 @@
       margin-top: 30px;
     }
 
-    .about-text {
-      flex: 1;
-    }
-
-    .about-image {
-      flex: 1;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    .about-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    .about-text { flex: 1; }
 
     .skills {
       display: flex;
@@ -258,7 +213,7 @@
     }
 
     body.light .skill {
-      background: rgba(102, 195, 255, 0.2);
+      background: rgba(102, 195, 255, 0.15);
     }
 
     .project-list {
@@ -276,11 +231,10 @@
       border-radius: 12px;
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
-      overflow: hidden;
     }
 
     body.light .project-item {
-      background-color: #eaeaea;
+      background-color: #e6e6e6;
     }
 
     .project-item:hover {
@@ -309,6 +263,7 @@
       text-align: left;
       font-size: 1rem;
       margin-bottom: 15px;
+      color: inherit;
     }
 
     .project-links {
@@ -321,6 +276,7 @@
       padding: 5px 10px;
       background: rgba(102, 195, 255, 0.1);
       border-radius: 4px;
+      color: #66c3ff;
     }
 
     .project-link:hover {
@@ -338,7 +294,7 @@
       border-radius: 8px;
       background: rgba(102, 195, 255, 0.1);
       border: 1px solid rgba(102, 195, 255, 0.3);
-      transition: all 0.3s;
+      color: #66c3ff;
     }
 
     .contact-link:hover {
@@ -347,30 +303,12 @@
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 3rem;
-      }
-      
-      header p {
-        font-size: 1.1rem;
-      }
-      
-      h2 {
-        font-size: 2.2rem;
-      }
-      
-      nav {
-        right: 20px;
-        padding: 8px 15px;
-      }
-      
-      .about-content {
-        flex-direction: column;
-      }
-      
-      .project-list {
-        grid-template-columns: 1fr;
-      }
+      header h1 { font-size: 3rem; }
+      header p { font-size: 1.1rem; }
+      h2 { font-size: 2.2rem; }
+      nav { right: 20px; padding: 8px 15px; }
+      .about-content { flex-direction: column; }
+      .project-list { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -385,7 +323,6 @@
   <header>
     <h1 data-aos="fade-up">Frolov Oleksandr</h1>
     <p data-aos="fade-up" data-aos-delay="200">Web & Interactive Designer</p>
-    <a href="/resume.pdf" class="resume-button" download>Download Summary</a>
   </header>
 
   <section id="about" class="about">
@@ -414,7 +351,7 @@
           <span class="skill">Interactive Design</span>
         </div>
       </div>
-      
+    </div>
   </section>
 
   <section id="projects" class="projects">
@@ -424,48 +361,42 @@
         <strong>MetaSpace</strong>
         <p>A virtual gallery space combining Three.js, WebGL and multiplayer support, allowing artists to showcase their work in customizable 3D environments with real-time visitor interaction.</p>
         <div class="project-links">
-          <a href="#" class="project-link">Live Demo</a>
-          <a href="#" class="project-link">Case Study</a>
+
         </div>
       </div>
       <div class="project-item" data-aos="fade-up" data-aos-delay="100">
         <strong>Echoes</strong>
         <p>An interactive sound/light installation powered by Max/MSP and Arduino, exhibited at Lisbon's Museum of Art, reacting to visitor movements with generative audio-visual patterns.</p>
         <div class="project-links">
-          <a href="#" class="project-link">Video</a>
-          <a href="#" class="project-link">Documentation</a>
+
         </div>
       </div>
       <div class="project-item" data-aos="fade-up" data-aos-delay="200">
         <strong>Onda</strong>
         <p>A fluid motion surf brand site with parallax scroll, dynamic color themes, and animations that respond to scroll velocity, built with GSAP and WebGL shaders.</p>
         <div class="project-links">
-          <a href="#" class="project-link">Visit Site</a>
-          <a href="#" class="project-link">Tech Breakdown</a>
+
         </div>
       </div>
       <div class="project-item" data-aos="fade-up" data-aos-delay="300">
         <strong>Lumina</strong>
         <p>A poetic user-driven story rendered with motion graphics and spatial sound design, exploring narrative through generative systems and machine learning text analysis.</p>
         <div class="project-links">
-          <a href="#" class="project-link">Experience</a>
-          <a href="#" class="project-link">Behind the Scenes</a>
+
         </div>
       </div>
       <div class="project-item" data-aos="fade-up" data-aos-delay="400">
         <strong>Neon Dreams</strong>
         <p>An AR filter series for Instagram that transforms urban environments into cyberpunk landscapes using real-time image processing and geolocation data.</p>
         <div class="project-links">
-          <a href="#" class="project-link">Try Filter</a>
-          <a href="#" class="project-link">Process</a>
+
         </div>
       </div>
       <div class="project-item" data-aos="fade-up" data-aos-delay="500">
         <strong>Chroma</strong>
         <p>A web-based tool for designers to create and share color palettes with AI suggestions, collaborative features, and accessibility checking.</p>
         <div class="project-links">
-          <a href="#" class="project-link">Use Tool</a>
-          <a href="#" class="project-link">GitHub</a>
+
         </div>
       </div>
     </div>
@@ -493,13 +424,10 @@
 
     function toggleTheme() {
       document.body.classList.toggle('light');
-      
-      // Save preference to localStorage
       const isLight = document.body.classList.contains('light');
       localStorage.setItem('themePreference', isLight ? 'light' : 'dark');
     }
-    
-    // Check for saved theme preference
+
     if (localStorage.getItem('themePreference') === 'light') {
       document.body.classList.add('light');
     }
